@@ -1,0 +1,3 @@
+[submodule "gui-robotic-arm"]
+	path = gui-robotic-arm
+	url = https://github.com/marovichn/gui-robotic-arm.git
