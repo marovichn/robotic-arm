@@ -20,6 +20,21 @@ void setup() {
 void loop() {
  if (Serial.available() > 0) {  // If data is available to read
     String data = Serial.readStringUntil('\n');
+char *ankleStr, *directionStr, *stepsStr;
+char *str = strdup(data.c_str()); // Convert String to C-style string
+
+// Tokenize the string using strtok()
+ankleStr = strtok(str, "-");
+directionStr = strtok(NULL, "-");
+stepsStr = strtok(NULL, "-");
+
+// Convert strings to integers
+int ankle = atoi(ankleStr);
+int direction = atoi(directionStr);
+int steps = atoi(stepsStr);
+
+// Now ankle, direction, and steps hold the respective integer values
+
 
     // Scenario 1: Handling angle and steps data
     if (data.startsWith("13,")) {
