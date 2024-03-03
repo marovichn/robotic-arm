@@ -1,20 +1,40 @@
-/* Example sketch to control a stepper motor with TB6560 stepper motor driver and Arduino without a library. More info: https://www.makerguides.com */
+/*
+//joint 1
+#define dirPin1 34
+#define stepPin1 36
 
-// Define stepper motor connections and steps per revolution:
-/* int buttonPin1 = 7;
-int buttonPin2 = 4;
+//joint 2
+#define dirPin1 28
+#define stepPin1 26
 
-#define dirPin 2
-#define stepPin 3
+//joint 3
+#define dirPin1 55
+#define stepPin1 54
+
+//joint 4
+#define dirPin1 48
+#define stepPin1 46
+
+//joint 5
+#define dirPin1 61
+#define stepPin1 60
+
 #define stepsPerRevolution 3
 
 void setup() {
   Serial.begin(9600);
-  pinMode(buttonPin1, INPUT);
-  pinMode(buttonPin2, INPUT);
-  // Declare pins as output:
-  pinMode(stepPin, OUTPUT);
-  pinMode(dirPin, OUTPUT);
+
+  // Declaring pins as output:
+  pinMode(stepPin1, OUTPUT);
+  pinMode(dirPin1, OUTPUT);
+  pinMode(stepPin2, OUTPUT);
+  pinMode(dirPin2, OUTPUT);
+  pinMode(stepPin3, OUTPUT);
+  pinMode(dirPin3, OUTPUT);
+  pinMode(stepPin4, OUTPUT);
+  pinMode(dirPin4, OUTPUT);
+  pinMode(stepPin5, OUTPUT);
+  pinMode(dirPin5, OUTPUT);
 }
 
 void loop() {
@@ -33,94 +53,104 @@ int ankle = atoi(ankleStr);
 int direction = atoi(directionStr);
 int steps = atoi(stepsStr);
 
-// Now ankle, direction, and steps hold the respective integer values
-
-
-    // Scenario 1: Handling angle and steps data
-    if (data.startsWith("13,")) {
-      String infoData = data.substring(3);
-      int delimiterIndex = infoData.indexOf('-');                       // Find the index of the '-' character
-      if (delimiterIndex != -1) {                                       // Check if the delimiter exists in the string
-        int direction = infoData.substring(0, delimiterIndex).toInt();  // Extract the substring before the '-'
-        int angleSteps = infoData.substring(delimiterIndex + 1).toInt();    // Extract the angle substring and convert to an integer
-
-        if (direction == 1) {
-          digitalWrite(dirPin, HIGH);
-          for (int i = 0; i < angleSteps; i++) {
-            digitalWrite(stepPin, HIGH);
-            delayMicroseconds(1000);
-            digitalWrite(stepPin, LOW);
-            delayMicroseconds(1000);
-          }  // Write the direction to pin 2
-        } else if (direction == 0) {
-          digitalWrite(dirPin, LOW);
-          for (int i = 0; i < angleSteps; i++) {
-            // These four lines result in 1 step:
-            digitalWrite(stepPin, HIGH);
-            delayMicroseconds(1000);
-            digitalWrite(stepPin, LOW);
-            delayMicroseconds(1000);
-          }
-        }
-      }
-    }
-
-    // Scenario 2: Handling direction pin commands for specific pins
-    if (data.startsWith("2,") || data.startsWith("8,")) {  // Check if the command is for direction pin
-      int pin = data.startsWith("2,") ? dirPin : 8;
-      int revSteps = (pin == 8) ? 200 : 800;      // Determine the number of steps based on the pin
-      int direction = data.substring(2).toInt();  // Extract direction (0 or 1)
+  switch (ankle) {
+    case 1:
       if (direction == 1) {
-        digitalWrite(dirPin, HIGH);
-        for (int i = 0; i < revSteps; i++) {
-          digitalWrite(stepPin, HIGH);
+        digitalWrite(dirPin1, HIGH);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin1, HIGH);
           delayMicroseconds(1000);
-          digitalWrite(stepPin, LOW);
+          digitalWrite(stepPin1, LOW);
           delayMicroseconds(1000);
-        }  // Write the direction to pin 2
+        }
       } else if (direction == 0) {
-        digitalWrite(dirPin, LOW);
-        for (int i = 0; i < revSteps; i++) {
-          // These four lines result in 1 step:
-          digitalWrite(stepPin, HIGH);
+        digitalWrite(dirPin1, LOW);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin1, HIGH);
           delayMicroseconds(1000);
-          digitalWrite(stepPin, LOW);
+          digitalWrite(stepPin1, LOW);
           delayMicroseconds(1000);
         }
       }
-    }
-
-}
-
-
-
-  //physical buttons
-  int buttonState1 = digitalRead(buttonPin1);
-  int buttonState2 = digitalRead(buttonPin2);
-
-  if (buttonState1 == HIGH) {  // Set the spinning direction clockwise:
-    digitalWrite(dirPin, HIGH);
-
-    // Spin the stepper motor 1 revolution slowly:
-    for (int i = 0; i < stepsPerRevolution; i++) {
-      // These four lines result in 1 step:
-      digitalWrite(stepPin, HIGH);
-      delayMicroseconds(1000);
-      digitalWrite(stepPin, LOW);
-      delayMicroseconds(1000);
+      break;
+    case 2:
+      if (direction == 1) {
+        digitalWrite(dirPin2, HIGH);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin2, HIGH);
+          delayMicroseconds(1000);
+          digitalWrite(stepPin2, LOW);
+          delayMicroseconds(1000);
+        }
+      } else if (direction == 0) {
+        digitalWrite(dirPin2, LOW);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin2, HIGH);
+          delayMicroseconds(1000);
+          digitalWrite(stepPin2, LOW);
+          delayMicroseconds(1000);
+        }
+      }
+      break;
+    case 3:
+      if (direction == 1) {
+        digitalWrite(dirPin3, HIGH);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin3, HIGH);
+          delayMicroseconds(1000);
+          digitalWrite(stepPin3, LOW);
+          delayMicroseconds(1000);
+        }
+      } else if (direction == 0) {
+        digitalWrite(dirPin3, LOW);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin3, HIGH);
+          delayMicroseconds(1000);
+          digitalWrite(stepPin3, LOW);
+          delayMicroseconds(1000);
+        }
+      }
+      break;
+    case 4:
+      if (direction == 1) {
+        digitalWrite(dirPin4, HIGH);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin4, HIGH);
+          delayMicroseconds(1000);
+          digitalWrite(stepPin4, LOW);
+          delayMicroseconds(1000);
+        }
+      } else if (direction == 0) {
+        digitalWrite(dirPin4, LOW);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin4, HIGH);
+          delayMicroseconds(1000);
+          digitalWrite(stepPin4, LOW);
+          delayMicroseconds(1000);
+        }
+      }
+      break;
+    case 5:
+      if (direction == 1) {
+        digitalWrite(dirPin5, HIGH);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin5, HIGH);
+          delayMicroseconds(1000);
+          digitalWrite(stepPin5, LOW);
+          delayMicroseconds(1000);
+        }
+      } else if (direction == 0) {
+        digitalWrite(dirPin5, LOW);
+        for (int i = 0; i < steps; i++) {
+          digitalWrite(stepPin5, HIGH);
+          delayMicroseconds(1000);
+          digitalWrite(stepPin5, LOW);
+          delayMicroseconds(1000);
+        }
+      }
+      break;
+    default:
+      Serial.println("Wrong input");
     }
   }
-  if (buttonState2 == HIGH) {  // Set the spinning direction counterclockwise:
-    digitalWrite(dirPin, LOW);
-
-    // Spin the stepper motor 1 revolution quickly:
-    for (int i = 0; i < stepsPerRevolution; i++) {
-      // These four lines result in 1 step:
-      digitalWrite(stepPin, HIGH);
-      delayMicroseconds(1000);
-      digitalWrite(stepPin, LOW);
-      delayMicroseconds(1000);
-    }
-  }
-}
- */
+}*/
