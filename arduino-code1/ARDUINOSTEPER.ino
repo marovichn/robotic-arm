@@ -58,18 +58,46 @@ int steps = atoi(stepsStr);
       if (direction == 1) {
         digitalWrite(dirPin1, HIGH);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin1, HIGH);
+          if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin1, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin1, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin1, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin1, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin1, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin1, LOW);
+          delayMicroseconds(1500);
+          } 
         }
       } else if (direction == 0) {
         digitalWrite(dirPin1, LOW);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin1, HIGH);
+           if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin1, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin1, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin1, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin1, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin1, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin1, LOW);
+          delayMicroseconds(1500);
+          }
         }
       }
       break;
@@ -77,18 +105,46 @@ int steps = atoi(stepsStr);
       if (direction == 1) {
         digitalWrite(dirPin2, HIGH);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin2, HIGH);
+           if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin2, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin2, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin2, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin2, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin2, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin2, LOW);
+          delayMicroseconds(1500);
+          };
         }
       } else if (direction == 0) {
         digitalWrite(dirPin2, LOW);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin2, HIGH);
+           if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin2, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin2, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin2, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin2, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin2, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin2, LOW);
+          delayMicroseconds(1500);
+          };
         }
       }
       break;
@@ -96,18 +152,46 @@ int steps = atoi(stepsStr);
       if (direction == 1) {
         digitalWrite(dirPin3, HIGH);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin3, HIGH);
+           if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin3, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin3, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin3, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin3, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin3, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin3, LOW);
+          delayMicroseconds(1500);
+          }
         }
       } else if (direction == 0) {
         digitalWrite(dirPin3, LOW);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin3, HIGH);
+           if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin3, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin3, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin3, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin3, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin3, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin3, LOW);
+          delayMicroseconds(1500);
+          }
         }
       }
       break;
@@ -115,18 +199,46 @@ int steps = atoi(stepsStr);
       if (direction == 1) {
         digitalWrite(dirPin4, HIGH);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin4, HIGH);
+           if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin4, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin4, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin4, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin4, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin4, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin4, LOW);
+          delayMicroseconds(1500);
+          }
         }
       } else if (direction == 0) {
         digitalWrite(dirPin4, LOW);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin4, HIGH);
+           if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin4, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin4, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin4, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin4, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin4, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin4, LOW);
+          delayMicroseconds(1500);
+          }
         }
       }
       break;
@@ -134,18 +246,46 @@ int steps = atoi(stepsStr);
       if (direction == 1) {
         digitalWrite(dirPin5, HIGH);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin5, HIGH);
+           if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin5, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin5, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin5, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin5, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin5, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin5, LOW);
+          delayMicroseconds(1500);
+          }
         }
       } else if (direction == 0) {
         digitalWrite(dirPin5, LOW);
         for (int i = 0; i < steps; i++) {
-          digitalWrite(stepPin5, HIGH);
+           if(i <= steps - (3*(steps/4)) ){
+            digitalWrite(stepPin5, HIGH);
+          delayMicroseconds(300);
+          digitalWrite(stepPin5, LOW);
+          delayMicroseconds(300);
+          } 
+          if(i > steps - (3*(steps/4)) && i <= steps - (steps/4)){
+            digitalWrite(stepPin5, HIGH);
           delayMicroseconds(1000);
           digitalWrite(stepPin5, LOW);
           delayMicroseconds(1000);
+          } 
+          if(i > steps - (steps/4) ){
+            digitalWrite(stepPin5, HIGH);
+          delayMicroseconds(1500);
+          digitalWrite(stepPin5, LOW);
+          delayMicroseconds(1500);
+          }
         }
       }
       break;
