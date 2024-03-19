@@ -1,4 +1,10 @@
 /*
+#include <Servo.h>
+
+Servo gripperServo;
+#define  servoPin 6
+int maxSteps = 90;
+
 //joint 1
 #define dirPin1 34
 #define stepPin1 36
@@ -23,6 +29,9 @@
 
 void setup() {
   Serial.begin(9600);
+
+  //Gripper
+  gripperServo.attach(6);
 
   // Declaring pins as output:
   pinMode(stepPin1, OUTPUT);
@@ -287,6 +296,13 @@ int steps = atoi(stepsStr);
           delayMicroseconds(1500);
           }
         }
+      }
+      break;
+      case 6:
+      if(steps <= maxSteps)
+      {
+        gripperServo.write(steps);
+        delay(1000); 
       }
       break;
     default:
